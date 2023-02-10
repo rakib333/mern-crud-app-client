@@ -1,0 +1,18 @@
+.link-main {
+    margin: 0 auto;
+}
+.nav-link a{
+    color: rgb(65, 162, 228);
+    text-decoration: none;
+    margin-right: 20px;
+    padding: 5px 8px;
+    border-radius: 10px;
+    font-size: 20px;
+    border: 1px solid salmon;
+}
+
+@media only screen and (max-width: 776px) {
+    .nav-link a {
+        width: 20%;
+    }
+}
