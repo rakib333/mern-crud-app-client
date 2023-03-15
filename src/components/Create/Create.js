@@ -9,8 +9,10 @@ import "react-toastify/dist/ReactToastify.css";
 import "./Create.css";
 import { createProduct } from "../../backend-APIservices/crudServices";
 import FullScreenLoader from "../../Layout/FullScreenLoader";
+import { useNavigate } from "react-router-dom";
 
 const Create = () => {
+  let navigate = useNavigate();
   let productName,
     productPrice,
     quantity,
@@ -45,6 +47,7 @@ const Create = () => {
         loader.classList.add("d-none");
         if (result === true) {
           successToast("Data saved successfully");
+          navigate('/read')
           productName.value = "";
           productPrice.value = "";
           quantity.value = "";

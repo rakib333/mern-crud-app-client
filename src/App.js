@@ -1,17 +1,20 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import Create from './components/Create/Create';
-import Read from './components/Read/Read';
-import Update from './components/Update/Update';
-import Main from './Layout/Main';
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Main from "./Layout/Main";
+import UpdatePage from "./pages/UpdatePage";
+import ReadPage from "./pages/ReadPage";
+import CreatePage from "./pages/CreatePage";
 function App() {
   const router = createBrowserRouter([
     {
-      path: '/', element: <Main></Main>,
+      path: "/",
+      element: <Main></Main>,
       children: [
-        {path: 'create', element: <Create></Create>},
-        {path: 'read', element: <Read></Read>},
-        {path: 'update', element: <Update></Update>}
-    ]}
+        { path: "/", element: <ReadPage></ReadPage> },
+        { path: "create", element: <CreatePage></CreatePage> },
+        { path: "read", element: <ReadPage></ReadPage> },
+        { path: "/update/:id", element: <UpdatePage></UpdatePage> }
+      ],
+    },
   ]);
   return (
     <>
